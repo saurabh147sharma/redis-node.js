@@ -1,0 +1,13 @@
+{
+    "name": "Redis-Node-CRUD",
+    "version": "0.0.1",
+    "main": "app.js",
+    "author": "Coding 4 Developers",
+    "description": "An example of Redis & Node.js",
+    "dependencies": {
+        "ejs": "^2.5.7",
+        "body-parser": "*",
+        "express": "*",
+        "redis": "*"
+    }
+}

@@ -1,0 +1,40 @@
+<% include partials/header %>
+<% include partials/nav %>
+<body>
+<main role="main" class="container">
+
+        <% if (typeof message != 'undefined' && message) { %>
+            <h2><%= message %></h2>
+            <% } %>
+
+        <form class="form-inline mt-2 mt-md-0" method="post" action="/users/search">
+                <input class="form-control mr-sm-2" type="text" name="userId" value="<% if (typeof users != 'undefined') { %><%= users.userId %><% } %>" placeholder="User Id" aria-label="User Id">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+              <% 
+              if (typeof users != 'undefined') { 
+                              %>
+              <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                            
+                            <tr>
+                                    <td><%= users.name %></td>
+                                    <td><%= users.email %></td>
+                                    <td><a href="/users/delete/<%= users.userId %>" title="Delete User"><button class="btn btn-danger">Delete</button></a></td>
+                                  </tr>
+                           
+                    </tbody>
+                  </table>
+                  <%
+                }
+                %>
+  </main>
+</body>
+</html>
